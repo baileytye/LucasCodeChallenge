@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew testDebugUnitTest --console=plain)",
+      "Bash(./gradlew assembleDebug --console=plain)",
+      "Bash(adb devices *)",
+      "Bash(xcrun simctl *)",
+      "Bash(adb install *)",
+      "Bash(adb shell *)",
+      "Bash(adb exec-out *)",
+      "Bash(adb uninstall *)",
+      "Bash(unzip -p ~/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-test-jvm/1.9.0/7227c0691a604e2b32f525b628014dda862d0eed/kotlinx-coroutines-test-jvm-1.9.0.jar META-INF/kotlinx-coroutines-test.kotlin_module)",
+      "Bash(javap -cp ~/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-test-jvm/1.9.0/7227c0691a604e2b32f525b628014dda862d0eed/kotlinx-coroutines-test-jvm-1.9.0.jar kotlinx.coroutines.test.TestScope)",
+      "Bash(javap -cp ~/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-test-jvm/1.9.0/7227c0691a604e2b32f525b628014dda862d0eed/kotlinx-coroutines-test-jvm-1.9.0.jar kotlinx.coroutines.test.TestScopeKt)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
