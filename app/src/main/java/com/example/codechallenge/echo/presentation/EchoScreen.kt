@@ -11,7 +11,9 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -54,6 +56,18 @@ fun EchoScreen(
             isError = uiState.errorMessage != null,
         )
 
+        val counterColor = when {
+            uiState.input.length > 48 -> MaterialTheme.colorScheme.error
+            uiState.input.length > 40 -> Color(0xFFF57C00)
+            else -> MaterialTheme.colorScheme.onSurfaceVariant
+        }
+        Text(
+            text = "${uiState.counterState.displayText} characters",
+            style = MaterialTheme.typography.labelSmall,
+            color = counterColor,
+            modifier = Modifier.align(Alignment.End),
+        )
+
         Button(
             onClick = onSubmit,
             enabled = !uiState.isSubmitting,
@@ -66,8 +80,9 @@ fun EchoScreen(
         }
 
         uiState.submittedName?.let { submittedName ->
+            val displayName = uiState.submittedName!!
             Text(
-                text = stringResource(R.string.name, submittedName),
+                text = stringResource(R.string.name, displayName),
                 style = MaterialTheme.typography.bodyLarge,
             )
         }
